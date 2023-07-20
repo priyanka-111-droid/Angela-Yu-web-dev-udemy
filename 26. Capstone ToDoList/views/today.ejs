@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<% if(locals.allTasks) { %>
+    <ul>
+        <% allTasks.forEach((eachTask)=>{ %>
+            <% let newTask = eachTask.newTask; %>
+            <% let taskDate = eachTask.taskDate; %>
+            <% if(taskDate===locals.currentDate){ %>
+                <li>
+                    <%= eachTask.newTask %>: <%= eachTask.taskDate %> 
+                </li>  
+            <% } %>  
+        <% }) %>
+    </ul>
+<% } %> 
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<form action="/submit" method="POST">
+    <label for="task">Enter task: </label>
+    <input type="text" name="task" id="task">
+    <label for="task">Enter due date: </label>
+    <input type="date" name="date" id="date">
+    <input type="submit" value="submit">
+    
+</form>
+
+<% if(locals.allTasks) { %>
+    <ul>
+        <% allTasks.forEach((eachTask)=>{ %>
+            <li>
+                <%= eachTask.newTask %>: <%= eachTask.taskDate %> 
+            </li>
+        <% }) %>
+    </ul>
+<% } %> 
+
+</body>
+</html>
