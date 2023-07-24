@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Agify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+      <div class="response-area">
+        <% if(locals.agecontent) { %> 
+          <%= agecontent.age %>
+        <% } else if(locals.gendercontent) { %>
+          <%= gendercontent.gender %>
+        <% } %>
+      </div>
+      <form id="myForm" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input id="get" type="submit" value="GET AGE" formaction="/get-age">
+        <input id="get" type="submit" value="GET GENDER" formaction="/get-gender">
+      </form>
+    </div>
+</body>
+</html>
