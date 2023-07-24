@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Compose</h1>
+<form action="/compose" method="POST">
+
+    <div class="form-group">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+        </div>
+
+        <div class="mb-3">
+        <label for="postBody" class="form-label">Post</label>
+        <textarea id="postBody" name="postBody" rows="5" cols="8" class="form-control">
+        </textarea> 
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+<!--keep button outside form group so that its not stuck-->
+
+<%- include("partials/footer.ejs") %>
