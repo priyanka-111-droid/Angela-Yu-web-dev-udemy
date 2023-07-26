@@ -1,0 +1,28 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+    
+
+    <% newListItems.forEach((eachListItem)=>{ %>
+      <!--make a form since on clicking checkbox, entry should delete(get removed),so you need to POST it-->
+      <form action="/delete" method="post"> <!--this route responsible for checking off and deleting items-->
+      <div class="item">
+        <input name="checkbox" type="checkbox" value="<%= eachListItem._id %>" onChange="this.form.submit()"><!--when I click checkbox,form will submit(content will get deleted)-->
+        <p><%=  eachListItem.name  %></p>
+      </div>
+
+      <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+      </form>
+    <% }) %>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
+      </form>
+  </div>
+
+<%- include("footer") -%>

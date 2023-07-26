@@ -47,7 +47,7 @@ app.post("/compose",(req,res)=>{
 })
 
 app.get("/posts/:id",(req,res)=>{
-  const userQuery = _.lowerCase(req.params.id);
+  const userQuery = _.lowerCase(req.params.id);// express route parameters
   posts.forEach((eachPost)=>{
     const postTitle = _.lowerCase(eachPost.title);
     if(postTitle===userQuery){
